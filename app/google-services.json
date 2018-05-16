@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "238667854701",
+    "firebase_url": "https://my-pbo-project.firebaseio.com",
+    "project_id": "my-pbo-project",
+    "storage_bucket": "my-pbo-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238667854701:android:2482c03bff2d60d2",
+        "android_client_info": {
+          "package_name": "com.example.rafel.maqan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238667854701-ov0c6nfhs92a78ub5rbm7efarmejjcsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1sA-UwdkeCMXv5woWysBB0Gog-SWSiEk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
