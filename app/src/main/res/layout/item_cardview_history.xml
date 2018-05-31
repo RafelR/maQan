@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    card_view:cardCornerRadius="4dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:layout_gravity="bottom">
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/tv_history_tanngal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tanggal"
+            android:textColor="#000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/tv_name_breakfast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_karbohidrat_breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Karbohidrat : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_lemak_breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lemak : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_protein_breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protein : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_kalori_breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kalori : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/tv_name_lunch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_karbohidrat_lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Karbohidrat : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_lemak_lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lemak : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_protein_lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protein : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_kalori_lunch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kalori : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/tv_name_dinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_karbohidrat_dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Karbohidrat : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_lemak_dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lemak : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_protein_dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protein : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_kalori_dinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kalori : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000"/>
+        <TextView
+            android:layout_marginLeft="8dp"
+            android:id="@+id/tv_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total Gizi"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_karbohidrat_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Karbohidrat : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_lemak_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lemak : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_protein_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Protein : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/tv_kalori_total"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kalori : "
+                android:textColor="#000"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

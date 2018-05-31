@@ -1,4 +1,4 @@
-package com.example.rafel.maqan;
+package com.example.rafel.maqan.util;
 
 import android.view.View;
 

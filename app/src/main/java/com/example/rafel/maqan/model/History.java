@@ -1,4 +1,4 @@
-package com.example.rafel.maqan;
+package com.example.rafel.maqan.model;
 
 public class History {
     public Food getBreakfast() {
@@ -13,10 +13,6 @@ public class History {
         return dinner;
     }
 
-    public String getDate() {
-        return date;
-    }
-
     public void setBreakfast(Food breakfast) {
         this.breakfast = breakfast;
     }
@@ -29,19 +25,28 @@ public class History {
         this.dinner = dinner;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
     }
 
-    Food breakfast;
-    Food lunch;
-    Food dinner;
-    String date;
+    public String getTanggal() {
 
-    public History(String date, Food breakfast,Food lunch, Food dinner){
-        this.date = date;
+        return tanggal;
+    }
+
+    private String tanggal;
+    private Food breakfast = new Food();
+    private Food lunch = new Food();
+    private Food dinner = new Food();
+
+
+    public History(String tanggal, Food breakfast,Food lunch, Food dinner){
+        this.tanggal = tanggal;
         this.breakfast = breakfast;
         this.lunch = lunch;
         this.dinner = dinner;
+    }
+    public History(){
+
     }
 }

@@ -1,4 +1,4 @@
-package com.example.rafel.maqan;
+package com.example.rafel.maqan.ui;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -11,13 +11,12 @@ import android.widget.ProgressBar;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.example.rafel.maqan.R;
+import com.example.rafel.maqan.helper.FirebaseHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -30,16 +29,15 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         firebaseAuth = FirebaseAuth.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
-        btnSignUp = (Button)findViewById(R.id.btn_signup);
+        btnSignUp = findViewById(R.id.btn_signup);
         btnSignUp.setOnClickListener(this);
-        btnToLogin = (Button)findViewById(R.id.btn_to_login);
+        btnToLogin = findViewById(R.id.btn_to_login);
         btnToLogin.setOnClickListener(this);
 
-        edtName = (EditText)findViewById(R.id.edt_name);
-        edtUsername = (EditText)findViewById(R.id.edt_username2);
-        edtPassword = (EditText)findViewById(R.id.edt_password2);
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        edtName = findViewById(R.id.edt_name);
+        edtUsername = findViewById(R.id.edt_username2);
+        edtPassword = findViewById(R.id.edt_password2);
+        progressBar = findViewById(R.id.progressBar);
     }
 
     @Override
@@ -76,12 +74,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         Toast.makeText(SignUpActivity.this,"E-mail is not valid",Toast.LENGTH_SHORT).show();
                     }
                     else{
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        FirebaseUser user= firebaseAuth.getCurrentUser();
-                        String userId = user.getUid();
-                        DatabaseReference ref = database.getReference().child("users").child(userId);
-                        ref.child("Name").setValue(name);
-                        ref.child("E-mail").setValue(username);
+                        FirebaseHelper helper = new FirebaseHelper();
+                        helper.setUser();
+                        helper.setUserId();
+                        helper.AddUser(name, username);
 
                         Intent intent = new Intent(SignUpActivity.this,HomeActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

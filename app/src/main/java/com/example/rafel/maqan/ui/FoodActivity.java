@@ -1,4 +1,4 @@
-package com.example.rafel.maqan;
+package com.example.rafel.maqan.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.rafel.maqan.helper.FirebaseHelper;
+import com.example.rafel.maqan.util.CustomOnItemClickListener;
+import com.example.rafel.maqan.model.Food;
+import com.example.rafel.maqan.R;
+import com.example.rafel.maqan.ui.viewholder.FoodViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,10 +32,12 @@ public class FoodActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food);
         String eat = getIntent().getStringExtra(EXTRA_EAT);
         setTitle(eat);
+
+        FirebaseHelper helper = new FirebaseHelper();
         db = database.getInstance().getReference().child("food-items");
         db.keepSynced(true);
 
-        rvCategory = (RecyclerView)findViewById(R.id.rv_category);
+        rvCategory = findViewById(R.id.rv_category);
         rvCategory.setHasFixedSize(true);
         rvCategory.setLayoutManager(new LinearLayoutManager(this));
         rvCategory.setLayoutManager(new GridLayoutManager(this,2));
@@ -47,38 +52,36 @@ public class FoodActivity extends AppCompatActivity {
             protected void populateViewHolder(FoodViewHolder viewHolder, final Food model, int position) {
                 viewHolder.setImage(getApplicationContext(),model.getImage());
                 viewHolder.setName(model.getName());
-                viewHolder.setLemak("Lemak : "+model.getLemak());
-                viewHolder.setKarbohidrat("Karbohidrat : "+model.getKarbohidrat());
-                viewHolder.setProtein("Protein : "+ model.getProtein());
+                viewHolder.setLemak(model.getLemak());
+                viewHolder.setKarbohidrat(model.getKarbohidrat());
+                viewHolder.setProtein(model.getProtein());
+                viewHolder.setKalori(model.getKalori());
                 viewHolder.setJenis(model.getJenis()+" Food");
 
                 viewHolder.btnAdd.setOnClickListener(new CustomOnItemClickListener(position, new CustomOnItemClickListener.OnItemClickCallback() {
                     @Override
                     public void onItemClicked(View view, int position) {
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        if(user!=null) {
+                        FirebaseHelper helper = new FirebaseHelper();
+                        helper.setUser();
+
+                        if(helper.getUser()!=null) {
+                            helper.setUserId();
+
                             Calendar c = Calendar.getInstance();
                             SimpleDateFormat df = new SimpleDateFormat("EEEE, dd MMM yyyy");
                             String date = df.format(c.getTime());
 
-                            String userId = user.getUid();
+                            SimpleDateFormat df2 = new SimpleDateFormat("ddMMyyyy");
+                            String key = df2.format(c.getTime());
 
                             String eat = getIntent().getStringExtra(EXTRA_EAT);
 
-                            database = database.getInstance();
-                            DatabaseReference ref = database.getReference().child("history").child(userId).child(date).child(eat);
-                            ref.child("name").setValue(model.getName());
-                            ref.child("jenis").setValue(model.getJenis());
-                            ref.child("karbohidrat").setValue(model.getKarbohidrat());
-                            ref.child("protein").setValue(model.getProtein());
-                            ref.child("lemak").setValue(model.getLemak());
-
+                            helper.AddEat(model, date, key, eat);
                             Toast.makeText(FoodActivity.this,"Success updating food",Toast.LENGTH_SHORT).show();
                         }
                         else{
                             Toast.makeText(FoodActivity.this,"Please login first. :)",Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 }));
             }
